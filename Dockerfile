@@ -1,4 +1,6 @@
-FROM vastai/pytorch:v1.0rc1_cuda10
+# FROM vastai/pytorch:v1.0rc1_cuda10      # ← original image (kept for history)
+FROM pytorch/pytorch:2.1.0-cuda12.1-cudnn8-runtime
+# Switched to modern base so pip ≥23 can install numpy 2.x    (2025-08-01 OJ)
 
 RUN apt-get update && apt-get install -y \
     git \
